@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"encoding/json"
 	"fmt"
-	"math"
 	"net/http"
 	"strings"
 )
@@ -21,7 +20,7 @@ func Random16() string {
 	var output strings.Builder
 	output.Grow(length)
 	for i := 0; i < length; i++ {
-		randomChar := charSet[int(math.Abs(float64(int(b[i]))))%35]
+		randomChar := charSet[int(b[i])%35]
 		output.WriteString(string(randomChar))
 	}
 	return output.String()
