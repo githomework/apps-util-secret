@@ -12,7 +12,7 @@ import (
 func Random16() string {
 	const length = 16
 	const charSet = "0123456789abcdefghijk-mnopqrstvwxyz" // not have lower case L to minimise confusion
-	rand.Seed(time.Now().Unix())
+	rand.Seed(time.Now().UnixNano())
 
 	var output strings.Builder
 	output.Grow(length)
